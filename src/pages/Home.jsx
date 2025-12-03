@@ -45,7 +45,7 @@ function Home() {
             >
               <div className="city-icon">🗻</div>
               <div className="city-name">Osaka</div>
-              <div className="city-subtitle">Le Mug caché</div>
+              <div className="city-subtitle">Le Daruma de la Fortune</div>
               {osakaSolved && <div className="checkmark">✓</div>}
               {(!tokyoSolved || !kyotoSolved) && <div className="lock-icon">🔒</div>}
             </div>

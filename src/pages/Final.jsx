@@ -58,18 +58,8 @@ function Final() {
           <div className="plus-sign">+</div>
 
           <div className="mug-gift-container">
-            <div className="mug-gift">
-              <div className="mug-gift-body">
-                <div className="mug-gift-handle"></div>
-                <div className="mug-gift-pattern">
-                  <span>🌸</span>
-                  <span className="gift-7">7</span>
-                  <span>🌸</span>
-                </div>
-                <div className="mug-gift-rim"></div>
-              </div>
-            </div>
-            <p className="mug-label">Mug japonais</p>
+            <div className="simple-mug">☕</div>
+            <p className="mug-label">Mug</p>
           </div>
         </div>
 

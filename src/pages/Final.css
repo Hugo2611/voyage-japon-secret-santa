@@ -179,62 +179,11 @@
   color: var(--color-gold);
 }
 
-.mug-gift {
+.simple-mug {
+  font-size: 8rem;
   animation: wiggle 2s ease-in-out infinite;
   animation-delay: 1s;
-}
-
-.mug-gift-body {
-  position: relative;
-  width: 100px;
-  height: 120px;
-  background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
-  border: 3px solid var(--color-black);
-  border-radius: 0 0 15px 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  overflow: hidden;
-}
-
-.mug-gift-rim {
-  position: absolute;
-  top: -6px;
-  left: -3px;
-  right: -3px;
-  height: 18px;
-  background: linear-gradient(135deg, var(--color-torii) 0%, #a00d25 100%);
-  border: 3px solid var(--color-black);
-  border-radius: 15px 15px 0 0;
-}
-
-.mug-gift-handle {
-  position: absolute;
-  right: -25px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 35px;
-  height: 50px;
-  border: 3px solid var(--color-black);
-  border-left: none;
-  border-radius: 0 25px 25px 0;
-}
-
-.mug-gift-pattern {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 1.5rem;
-}
-
-.gift-7 {
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: var(--color-torii);
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.2));
 }
 
 .daruma-label,
@@ -311,9 +260,8 @@
     height: 50px;
   }
 
-  .mug-gift-body {
-    width: 90px;
-    height: 110px;
+  .simple-mug {
+    font-size: 6rem;
   }
 
   .final-actions {
