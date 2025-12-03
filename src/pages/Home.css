@@ -1,0 +1,207 @@
+.home-container {
+  background: linear-gradient(135deg, var(--color-washi) 0%, #e8dcc8 100%);
+}
+
+.home-content {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.subtitle {
+  color: var(--color-indigo);
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.japan-map {
+  background: white;
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-decorations {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0.05;
+}
+
+.kanji {
+  font-size: 120px;
+  font-weight: 700;
+  color: var(--color-torii);
+  line-height: 1;
+}
+
+.cities {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.city {
+  background: linear-gradient(135deg, var(--color-washi) 0%, white 100%);
+  border: 3px solid var(--color-indigo);
+  border-radius: 16px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-height: 120px;
+  touch-action: manipulation;
+}
+
+.city:hover:not(.locked) {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(200, 16, 46, 0.2);
+  border-color: var(--color-torii);
+}
+
+.city:active:not(.locked) {
+  transform: translateY(-2px);
+}
+
+.city.locked {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #f5f5f5;
+  border-color: #ccc;
+}
+
+.city.solved {
+  border-color: var(--color-success);
+  background: linear-gradient(135deg, #e8f5e9 0%, white 100%);
+}
+
+.city-icon {
+  font-size: 3rem;
+  margin-bottom: 8px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.city-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-torii);
+  margin-bottom: 4px;
+}
+
+.city-subtitle {
+  font-size: 0.95rem;
+  color: var(--color-indigo);
+  font-style: italic;
+  text-align: center;
+}
+
+.checkmark {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--color-success);
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4);
+  animation: popIn 0.4s ease;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.lock-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+.btn-final {
+  margin-top: 20px;
+  background: linear-gradient(135deg, var(--color-gold) 0%, #ffd700 100%);
+  color: var(--color-black);
+  font-size: 1.2rem;
+  font-weight: 700;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.btn-final:hover {
+  background: linear-gradient(135deg, #ffd700 0%, var(--color-gold) 100%);
+}
+
+.instructions {
+  margin-top: 20px;
+  padding: 16px;
+  background: rgba(45, 62, 110, 0.1);
+  border-radius: 12px;
+  width: 100%;
+}
+
+.instructions p {
+  margin: 0;
+  color: var(--color-indigo);
+  font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+  .japan-map {
+    padding: 24px 16px;
+  }
+
+  .city {
+    padding: 16px;
+    min-height: 100px;
+  }
+
+  .city-icon {
+    font-size: 2.5rem;
+  }
+
+  .city-name {
+    font-size: 1.3rem;
+  }
+
+  .city-subtitle {
+    font-size: 0.85rem;
+  }
+}

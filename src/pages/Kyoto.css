@@ -1,0 +1,169 @@
+.kyoto-container {
+  background: linear-gradient(135deg, #f5f0ff 0%, var(--color-washi) 100%);
+}
+
+.kitsune-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(200, 16, 46, 0.05) 0%, transparent 100%);
+  border-radius: 12px;
+}
+
+.kitsune-icon {
+  font-size: 5rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.kitsune-message {
+  font-size: 1.1rem;
+  color: var(--color-indigo);
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+}
+
+.haiku-box {
+  background: white;
+  border: 3px solid var(--color-torii);
+  border-radius: 12px;
+  padding: 32px 24px;
+  margin: 24px 0;
+  box-shadow: 0 4px 16px rgba(200, 16, 46, 0.15);
+  position: relative;
+}
+
+.haiku-box::before,
+.haiku-box::after {
+  content: '🌸';
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.3;
+}
+
+.haiku-box::before {
+  top: 10px;
+  left: 10px;
+}
+
+.haiku-box::after {
+  bottom: 10px;
+  right: 10px;
+}
+
+.haiku-line {
+  font-size: 1.3rem;
+  text-align: center;
+  margin: 12px 0;
+  color: var(--color-black);
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.haiku-blank {
+  font-weight: 700;
+  color: var(--color-torii);
+  position: relative;
+}
+
+.haiku-answer {
+  color: var(--color-torii);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--color-gold);
+  text-decoration-thickness: 3px;
+  animation: revealAnswer 0.8s ease;
+}
+
+@keyframes revealAnswer {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.kanji-reveal {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 24px 0;
+  animation: fadeIn 1s ease;
+}
+
+.kanji-char {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--color-torii);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  animation: dropIn 0.6s ease backwards;
+}
+
+.kanji-char:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.kanji-char:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px) rotate(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+  }
+}
+
+.answer-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.hint {
+  font-size: 1.1rem;
+  color: var(--color-indigo);
+  font-weight: 500;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .kitsune-icon {
+    font-size: 4rem;
+  }
+
+  .haiku-box {
+    padding: 24px 16px;
+  }
+
+  .haiku-line {
+    font-size: 1.1rem;
+  }
+
+  .kanji-char {
+    font-size: 3rem;
+  }
+}

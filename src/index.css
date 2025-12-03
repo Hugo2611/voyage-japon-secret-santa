@@ -1,0 +1,250 @@
+:root {
+  --color-torii: #c8102e;
+  --color-washi: #f5f1e8;
+  --color-black: #1a1a1a;
+  --color-indigo: #2d3e6e;
+  --color-gold: #d4af37;
+  --color-success: #4caf50;
+  --color-error: #f44336;
+  
+  --font-jp: 'Noto Sans JP', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-jp);
+  background-color: var(--color-washi);
+  color: var(--color-black);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Texture washi subtile */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(200, 16, 46, 0.02) 2px,
+      rgba(200, 16, 46, 0.02) 4px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(45, 62, 110, 0.02) 2px,
+      rgba(45, 62, 110, 0.02) 4px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+/* Container principal */
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Titres */
+h1 {
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 700;
+  color: var(--color-torii);
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 500;
+  color: var(--color-indigo);
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 1rem;
+  max-width: 600px;
+}
+
+/* Boutons */
+.btn {
+  background: var(--color-torii);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: var(--font-jp);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(200, 16, 46, 0.3);
+  min-width: 200px;
+  min-height: 56px;
+  touch-action: manipulation;
+}
+
+.btn:hover {
+  background: #a00d25;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(200, 16, 46, 0.4);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(200, 16, 46, 0.3);
+}
+
+.btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn-secondary {
+  background: var(--color-indigo);
+  box-shadow: 0 4px 12px rgba(45, 62, 110, 0.3);
+}
+
+.btn-secondary:hover {
+  background: #1f2a4a;
+}
+
+/* Input */
+.input-field {
+  width: 100%;
+  max-width: 400px;
+  padding: 16px;
+  font-size: 1.1rem;
+  font-family: var(--font-jp);
+  border: 2px solid var(--color-indigo);
+  border-radius: 8px;
+  background: white;
+  color: var(--color-black);
+  margin-bottom: 1rem;
+  min-height: 56px;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: var(--color-torii);
+  box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.1);
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* Messages */
+.message {
+  padding: 16px 24px;
+  border-radius: 8px;
+  margin: 16px 0;
+  font-weight: 500;
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.message-success {
+  background: rgba(76, 175, 80, 0.1);
+  color: var(--color-success);
+  border: 2px solid var(--color-success);
+}
+
+.message-error {
+  background: rgba(244, 67, 54, 0.1);
+  color: var(--color-error);
+  border: 2px solid var(--color-error);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .page-container {
+    padding: 16px;
+  }
+  
+  .card {
+    padding: 20px;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Loading spinner */
+.spinner {
+  border: 3px solid rgba(200, 16, 46, 0.1);
+  border-radius: 50%;
+  border-top: 3px solid var(--color-torii);
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

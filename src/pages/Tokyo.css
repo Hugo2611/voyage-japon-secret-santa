@@ -1,0 +1,163 @@
+.tokyo-container {
+  background: linear-gradient(135deg, #fff5f5 0%, var(--color-washi) 100%);
+}
+
+.enigma-content {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.instruction {
+  font-size: 1.1rem;
+  color: var(--color-indigo);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.torii-puzzle {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.puzzle-piece {
+  background: white;
+  border: 3px solid var(--color-indigo);
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.puzzle-piece:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(45, 62, 110, 0.2);
+}
+
+.puzzle-piece:active {
+  transform: scale(0.98);
+}
+
+.puzzle-piece.selected {
+  border-color: var(--color-torii);
+  background: rgba(200, 16, 46, 0.05);
+  box-shadow: 0 0 0 4px rgba(200, 16, 46, 0.2);
+  transform: scale(1.05);
+}
+
+.puzzle-piece.solved {
+  border-color: var(--color-success);
+  cursor: default;
+  animation: solveAnimation 0.6s ease;
+}
+
+@keyframes solveAnimation {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.piece-content {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.torii-top {
+  font-size: 4rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.torii-upper,
+.torii-lower,
+.torii-base {
+  font-size: 3rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.piece-number {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--color-indigo);
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.btn-back {
+  background: transparent;
+  border: 2px solid var(--color-indigo);
+  color: var(--color-indigo);
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--font-jp);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  min-height: 48px;
+  touch-action: manipulation;
+}
+
+.btn-back:hover {
+  background: var(--color-indigo);
+  color: white;
+  transform: translateX(-4px);
+}
+
+.btn-back:active {
+  transform: translateX(-2px);
+}
+
+@media (max-width: 640px) {
+  .torii-puzzle {
+    gap: 10px;
+  }
+
+  .puzzle-piece {
+    padding: 16px;
+    min-height: 90px;
+  }
+
+  .piece-content {
+    font-size: 2.5rem;
+  }
+
+  .torii-top {
+    font-size: 3.5rem;
+  }
+
+  .torii-upper,
+  .torii-lower,
+  .torii-base {
+    font-size: 2.5rem;
+  }
+}
